@@ -10,10 +10,10 @@ class Program
     static void Main(string[] args)
     {
         Write("Grade (as a percentage not do NOT add %): ");
-
+        
         string input = ReadLine();
         int grade = int.Parse(input);
-
+        
         string score = grade switch
         {
             >= 93 => "A",
@@ -29,7 +29,7 @@ class Program
             >= 60 => "D-",
             < 60 => "F",
         };
-
+        
         Write($"Your score is: {score}");
     }
 }
