@@ -34,5 +34,14 @@ class Program
         };
         
         Write($"Your score is: {score}");
+        
+        if (grade >= 70)
+        {
+            Write("Congradulations you passed the class");
+        }
+        else
+        {
+            Write("Sorry you didn't pass the class. Lets try again!");
+        }
     }
 }
