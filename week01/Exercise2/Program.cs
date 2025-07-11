@@ -14,7 +14,7 @@ class Program
         Write("Grade (as a percentage not do NOT add %): ");
         
         string input = ReadLine();
-        int grade = int.Parse(input);
+        float grade = float.Parse(input);
         
         string score = grade switch
         {
@@ -30,6 +30,7 @@ class Program
             >= 63 => "D",
             >= 60 => "D-",
             < 60 => "F",
+            _ => "Invalid input: Not a Number",
         };
         
         Write($"Your score is: {score}");
