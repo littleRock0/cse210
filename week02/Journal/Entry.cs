@@ -5,10 +5,7 @@
 using System;
 using static System.Console;
 
-class Program
+public class Entry
 {
-    static void Main(string[] args)
-    {
-        
-    }
+    
 }

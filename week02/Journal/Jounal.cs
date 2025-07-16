@@ -5,10 +5,7 @@
 using System;
 using static System.Console;
 
-class Program
+public class Journal
 {
-    static void Main(string[] args)
-    {
-        
-    }
+    
 }
