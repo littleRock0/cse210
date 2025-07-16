@@ -7,5 +7,12 @@ using static System.Console;
 
 public class Entry
 {
+    public string _date;
+    public static _promptText;
+    public static _entryText;
     
+    public void Display()
+    {
+        
+    }
 }
