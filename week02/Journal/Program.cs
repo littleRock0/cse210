@@ -102,26 +102,16 @@ class Program
         {
             (selectName, selectNum) = Menu();
             
-            if (selectName == "Write")
+            string x = selectName switch
             {
-                JWrite(journal1);
-            }
-            else if (selectName == "Display")
-            {
-                JDisplay(journal1);
-            }
-            else if (selectName == "Load")
-            {
-                Load(journal1);
-            }
-            else if (selectName == "Save")
-            {
-                Save(journal1);
-            }
-            else if (selectName == "Quit")
-            {
-                Quit(journal1);
-            }
+                "Write" => JWrite(journal1),
+                "Display" => JDisplay(journal1),
+                "Load" => Load(journal1),
+                "Save" => Save(journal1),
+                "Quit" => Quit(journal1),
+                _ => "error",
+            };
+            
         } while (selectNum != 5 && selectName != "Quit");
     }
 }
