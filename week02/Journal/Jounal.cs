@@ -3,6 +3,7 @@
  * added using static System.Console; to shorten the code
 ***************************************************************************/
 using System;
+using System.IO;
 using static System.Console;
 
 public class Journal
@@ -29,6 +30,21 @@ public class Journal
     
     public void LoadFromFile(string file)
     {
+        _entries.Clear();
         
+        string[] lines = File.ReadAllLines(file);
+        
+        foreach (string line in lines)
+        {
+            Entry newEntry = new Entry();
+            
+            string[] elements = line.Split("|");
+            
+            newEntry._date = elements[0];
+            newEntry._promptText = elements[1];
+            newEntry._entryText = elements[2];
+            
+            AddEntry(newEntry);
+        }
     }
 }
