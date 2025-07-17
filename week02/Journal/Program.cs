@@ -22,7 +22,7 @@ class Program
             WriteLine($"{i}. {option}");
         }
         
-        Console.Write("Selection: ");
+        Write("Selection: ");
         
         int num = int.Parse(ReadLine());
         
@@ -31,6 +31,8 @@ class Program
     
     static void Main(string[] args)
     {
+        Journal journal1 = new Journal();
+        
         string selectName;
         int selectNum;
         
@@ -38,14 +40,23 @@ class Program
         {
             (selectName, selectNum) = Menu();
             
-            Journal journal1 = new Journal();
-            
             
             if (selectName == "Write")
             {
                 PromptGenerator prompt = new PromptGenerator();
+                Entry newEntry = new Entry();
                 
-                WriteLine(prompt.GetRandomPrompt());
+                newEntry._promptText = prompt.GetRandomPrompt();
+                
+                WriteLine(newEntry._promptText);
+                
+                newEntry._entryText = ReadLine();
+                
+                DateTime today = DateTime.Now.Date;
+                
+                newEntry._date = today.ToString("MM/dd/yyyy");
+                
+                journal1.AddEntry(newEntry);
             }
             else if (selectName == "Display")
             {

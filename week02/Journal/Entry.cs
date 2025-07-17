@@ -13,6 +13,6 @@ public class Entry
     
     public void Display()
     {
-        
+        Write($"{_date} - {_promptText}\n{_entryText}\n");
     }
 }
