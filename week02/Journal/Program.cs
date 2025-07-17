@@ -43,7 +43,9 @@ class Program
             
             if (selectName == "Write")
             {
+                PromptGenerator prompt = new PromptGenerator();
                 
+                WriteLine(prompt.GetRandomPrompt());
             }
             else if (selectName == "Display")
             {

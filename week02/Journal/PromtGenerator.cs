@@ -13,6 +13,17 @@ public class PromptGenerator
     {
         string file = "JournalPrompts.txt";
         string[] lines = System.IO.File.ReadAllLines(file);
-        return "";
+        
+        foreach (string line in lines)
+        {
+            _prompts.Add(line);
+        }
+        
+        Random number = new Random();
+        int promptNum = number.Next(0, lines.Length);
+        
+        string prompt = _prompts[promptNum];
+        
+        return prompt;
     }
 }
