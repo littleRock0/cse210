@@ -7,7 +7,7 @@ using static System.Console;
 
 class Program
 {
-    static string Menu()
+    static (string, int) Menu()
     {
         List<string> options = new List<string>
         { "Write", "Display", "Load", "Save", "Quit" };
@@ -22,16 +22,53 @@ class Program
             WriteLine($"{i}. {option}");
         }
         
-        Write("Selection: ");
+        Console.Write("Selection: ");
         
         int num = int.Parse(ReadLine());
         
-        return options[--num];
+        return (options[--num], num);
     }
+    
     static void Main(string[] args)
     {
-        string selection = Menu();
+        string selectName;
+        int selectNum;
         
-        WriteLine(selection);
+        do
+        {
+            (selectName, selectNum) = Menu();
+            
+            Journal journal1 = new Journal();
+            
+            
+            if (selectName == "Write")
+            {
+                
+            }
+            else if (selectName == "Display")
+            {
+                
+            }
+            else if (selectName == "Load")
+            {
+                Write("File Name: ");
+                
+                string input = ReadLine();
+                
+                journal1.LoadFromFile(input);
+            }
+            else if (selectName == "Save")
+            {
+                Write("File Name: ");
+                
+                string input = ReadLine();
+                
+                journal1.SaveToFile(input);
+            }
+            else if (selectName == "Quit")
+            {
+                WriteLine("See you tomorrow!");
+            }
+        } while (selectNum != 5 && selectName != "Quit");
     }
 }

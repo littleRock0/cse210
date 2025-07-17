@@ -11,6 +11,8 @@ public class PromptGenerator
     
     public string GetRandomPrompt()
     {
-        return "pass";
+        string file = "JournalPrompts.txt";
+        string[] lines = System.IO.File.ReadAllLines(file);
+        return "";
     }
 }
