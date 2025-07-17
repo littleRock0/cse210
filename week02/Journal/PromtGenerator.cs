@@ -3,6 +3,7 @@
  * added using static System.Console; to shorten the code
 ***************************************************************************/
 using System;
+using System.IO;
 using static System.Console;
 
 public class PromptGenerator
@@ -12,7 +13,7 @@ public class PromptGenerator
     public string GetRandomPrompt()
     {
         string file = "JournalPrompts.txt";
-        string[] lines = System.IO.File.ReadAllLines(file);
+        string[] lines = File.ReadAllLines(file);
         
         foreach (string line in lines)
         {
