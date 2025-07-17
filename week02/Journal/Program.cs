@@ -60,7 +60,7 @@ class Program
             }
             else if (selectName == "Display")
             {
-                
+                journal1.DisplayAll();
             }
             else if (selectName == "Load")
             {
