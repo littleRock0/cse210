@@ -7,7 +7,7 @@ using static System.Console;
 
 class Program
 {
-    static int Menu()
+    static string Menu()
     {
         List<string> options = new List<string>
         { "Write", "Display", "Load", "Save", "Quit" };
@@ -26,12 +26,12 @@ class Program
         
         int num = int.Parse(ReadLine());
         
-        return num;
+        return options[--num];
     }
     static void Main(string[] args)
     {
-        int selection = Menu();
-
+        string selection = Menu();
+        
         WriteLine(selection);
     }
 }
