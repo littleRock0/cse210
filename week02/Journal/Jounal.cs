@@ -25,7 +25,12 @@ public class Journal
     
     public void SaveToFile(string file)
     {
-        
+        using (StreamWriter saveFile = new StreamWriter(file))
+        {
+            foreach (Entry entry in _entries)
+                saveFile.WriteLine($"{entry._date}<|>{entry._promptText}<|>" +
+                $"{entry._entryText}");
+        }
     }
     
     public void LoadFromFile(string file)
@@ -38,7 +43,7 @@ public class Journal
         {
             Entry newEntry = new Entry();
             
-            string[] elements = line.Split("|");
+            string[] elements = line.Split("<|>");
             
             newEntry._date = elements[0];
             newEntry._promptText = elements[1];
