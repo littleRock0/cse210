@@ -15,7 +15,7 @@ public class Fraction
         _numerator = 1;
         _denominator = 1;
     }
-
+    
     public Fraction(int top)
     {
         _numerator = top;
