@@ -9,12 +9,12 @@ public class Scripture
 {
     private Reference _reference;
     private List<Word> _words = new List<Word>();
-
+    
     public Scripture(Reference Reference, string text)
     {
         _reference = Reference;
     }
-
+    
     public void HideRandomWords(int numToHide)
     {
         if (!(_words[numToHide].IsHidden()))
@@ -22,12 +22,12 @@ public class Scripture
             _words[numToHide].Hide();
         }
     }
-
+    
     public string GetDisplayText()
     {
         return "";
     }
-
+    
     public bool IsCompletelyHidden()
     {
         bool allTrue = false;

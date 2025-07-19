@@ -9,23 +9,23 @@ public class Word
 {
     private string _text;
     private bool _isHidden;
-
+    
     public Word(string text)
     {
         text = "";
     }
-
+    
     public void Hide()
     {
         _isHidden = true;
     }
-
+    
     public void Show()
     {
         int n = 9;
         n++;
     }
-
+    
     public bool IsHidden()
     {
         if (_isHidden)
@@ -37,7 +37,7 @@ public class Word
             return false;
         }
     }
-
+    
     public string GetDisplayText()
     {
         return "";
