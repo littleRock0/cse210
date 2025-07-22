@@ -17,7 +17,29 @@ public class Word
     
     public void Hide()
     {
-        _isHidden = true;
+        static bool isLetter(char chara)
+        {
+        return true;
+        }
+        
+        char[] letters = _text.ToCharArray();
+        int i = 0;
+        
+        if (!_isHidden)
+        {
+            foreach (char character in letters)
+            {
+                if (isLetter(character))
+                {
+                    letters[i] = '_';
+                }
+                
+                i++;
+            }
+
+            _text = new string(letters);
+            _isHidden = true;
+        }
     }
     
     public void Show()
@@ -40,6 +62,6 @@ public class Word
     
     public string GetDisplayText()
     {
-        return "";
+        return _text;
     }
 }

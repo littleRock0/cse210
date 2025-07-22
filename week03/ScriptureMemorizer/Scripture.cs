@@ -25,6 +25,13 @@ public class Scripture
     
     public string GetDisplayText()
     {
+        string reference = _reference.GetDisplayText();
+        string wordsFiltered = "";
+        
+        foreach (Word word in _words)
+        {
+            wordsFiltered += word.GetDisplayText();
+        }
         return "";
     }
     
