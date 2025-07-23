@@ -28,6 +28,7 @@ public class Scripture
     {
         Random number = new Random();
         int numToHide = number.Next(0, _words.Count);
+        
         if (!(_words[numToHide].IsHidden()))
         {
             _words[numToHide].Hide();
