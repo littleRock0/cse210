@@ -9,7 +9,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Reference reference = new Reference();
-        Scripture scripture = new Scripture(reference);
+        string verse = "Jesus wept.";
+        Reference reference = new Reference("John", 11, 35);
+        Scripture scripture = new Scripture(reference, verse);
     }
 }
