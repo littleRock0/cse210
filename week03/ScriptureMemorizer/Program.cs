@@ -10,7 +10,28 @@ class Program
     static void Main(string[] args)
     {
         string verse = "Jesus wept.";
+        string input;
+        
         Reference reference = new Reference("John", 11, 35);
         Scripture scripture = new Scripture(reference, verse);
+        
+        do
+        {
+            WriteLine(scripture.GetDisplayText());
+            
+            input = ReadLine();
+            
+            if (input != "quit")
+            {
+                input = "";
+            }
+            
+            if (scripture.IsCompletelyHidden())
+            {
+                input = "quit";
+            }
+            
+            Clear();
+        } while (input != "quit");
     }
 }

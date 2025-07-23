@@ -37,14 +37,18 @@ public class Scripture
     
     public string GetDisplayText()
     {
+        HideRandomWords();
+        
         string reference = _reference.GetDisplayText();
-        string wordsFiltered = "";
+        string wordsFiltered = " ";
         
         foreach (Word word in _words)
         {
             wordsFiltered += word.GetDisplayText();
+            wordsFiltered += " ";
         }
-        return "";
+        
+        return reference + wordsFiltered;
     }
     
     public bool IsCompletelyHidden()
