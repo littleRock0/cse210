@@ -21,6 +21,7 @@ public class Scripture
         foreach (string word in words)
         {
             Word newWord = new Word(word);
+            _words.Add(newWord);
         }
     }
     
@@ -53,14 +54,14 @@ public class Scripture
     
     public bool IsCompletelyHidden()
     {
-        bool allTrue = false;
-        
         foreach (Word word in _words)
         {
-            return !word.IsHidden() ? allTrue = false && false :
-                allTrue = true;
+            if (!word.IsHidden())
+            {
+                return false;
+            }
         }
         
-        return allTrue;
+        return true;
     }
 }
