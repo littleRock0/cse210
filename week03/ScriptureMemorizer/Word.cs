@@ -38,12 +38,6 @@ public class Word
         }
     }
     
-    // public void Show()
-    // {
-    //     int n = 9;
-    //     n++;
-    // }
-    
     public bool IsHidden()
     {
         return _isHidden;
