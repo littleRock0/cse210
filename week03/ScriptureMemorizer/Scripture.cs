@@ -13,10 +13,21 @@ public class Scripture
     public Scripture(Reference Reference, string text)
     {
         _reference = Reference;
+        
+        string[] words;
+        
+        words = text.Split(" ");
+        
+        foreach (string word in words)
+        {
+            Word newWord = new Word(word);
+        }
     }
     
-    public void HideRandomWords(int numToHide)
+    public void HideRandomWords()
     {
+        Random number = new Random();
+        int numToHide = number.Next(0, _words.Count);
         if (!(_words[numToHide].IsHidden()))
         {
             _words[numToHide].Hide();

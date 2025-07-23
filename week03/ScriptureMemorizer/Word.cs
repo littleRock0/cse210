@@ -12,16 +12,11 @@ public class Word
     
     public Word(string text)
     {
-        text = "";
+        _text = text;
     }
     
     public void Hide()
     {
-        static bool isLetter(char chara)
-        {
-        return true;
-        }
-        
         char[] letters = _text.ToCharArray();
         int i = 0;
         
@@ -29,14 +24,14 @@ public class Word
         {
             foreach (char character in letters)
             {
-                if (isLetter(character))
+                if (char.IsLetter(character))
                 {
                     letters[i] = '_';
                 }
                 
                 i++;
             }
-
+            
             _text = new string(letters);
             _isHidden = true;
         }
