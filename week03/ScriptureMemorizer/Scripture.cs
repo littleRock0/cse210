@@ -28,11 +28,23 @@ public class Scripture
     public void HideRandomWords()
     {
         Random number = new Random();
-        int numToHide = number.Next(0, _words.Count);
+        int countToHide = number.Next(1, (_words.Count +1) / 2);
         
-        if (!(_words[numToHide].IsHidden()))
+        for (int i = 1; i <= countToHide; i++)
         {
-            _words[numToHide].Hide();
+            bool hidden = false;
+            
+            do
+            {
+                int numToHide = number.Next(0, _words.Count);
+                
+                if (!(_words[numToHide].IsHidden()))
+                {
+                    _words[numToHide].Hide();
+                    
+                    hidden = true;
+                }
+            } while (!hidden);
         }
     }
     
