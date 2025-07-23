@@ -21,14 +21,14 @@ class Program
             
             input = ReadLine();
             
-            if (input != "quit")
-            {
-                input = "";
-            }
-            
             if (scripture.IsCompletelyHidden())
             {
                 input = "quit";
+            }
+            
+            if (input != "quit")
+            {
+                input = "";
             }
             
             Clear();
