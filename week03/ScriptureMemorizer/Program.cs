@@ -38,7 +38,7 @@ class Program
         do
         {
             WriteLine("Press Enter to Continue or type quit to end.");
-
+            
             if (i == 0)
             {
                 WriteLine(scripture.GetDisplayText(false));
@@ -63,7 +63,7 @@ class Program
             }
             
             Clear();
-
+            
             i++;
         } while (input != "quit");
     }

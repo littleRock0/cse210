@@ -51,7 +51,7 @@ public class Scripture
                 do
                 {
                     int numToHide = number.Next(0, _words.Count);
-
+                    
                     if (!(_words[numToHide].IsHidden()))
                     {
                         _words[numToHide].Hide();
