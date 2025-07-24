@@ -49,7 +49,7 @@ public class Scripture
         
         if (hide)
         {
-            for (int i = 1; i <= countToHide; i++)
+            for (int i = 1; i <= counttoHide; i++)
             {
                 bool hidden = false;
                 
