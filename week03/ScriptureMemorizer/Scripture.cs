@@ -9,6 +9,7 @@ public class Scripture
 {
     private Reference _reference;
     private List<Word> _words = new List<Word>();
+    private static Random number = new Random();
     
     public Scripture(Reference Reference, string text)
     {
@@ -27,8 +28,6 @@ public class Scripture
     
     public void HideRandomWords(bool hide)
     {
-        Random number = new Random();
-        
         int maxRange;
         
         if (_words.Count + 1 / 2 >= 5)
