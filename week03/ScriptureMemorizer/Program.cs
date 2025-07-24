@@ -37,7 +37,7 @@ class Program
         
         do
         {
-            WriteLine("Press Enter to Continue or type quit to end.\n");
+            WriteLine("Press Enter to Continue or type quit to end (ctrl + c if it hangs).\n");
             
             if (i == 0)
             {
