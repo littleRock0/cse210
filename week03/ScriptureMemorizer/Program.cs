@@ -14,6 +14,7 @@ class Program
     static void Main(string[] args)
     {
         string input;
+        int i = 0;
         
         GetScripture aScripture = new GetScripture();
         Scripture scripture;
@@ -37,7 +38,15 @@ class Program
         do
         {
             WriteLine("Press Enter to Continue or type quit to end.");
-            WriteLine(scripture.GetDisplayText());
+
+            if (i == 0)
+            {
+                WriteLine(scripture.GetDisplayText(false));
+            }
+            else
+            {
+                WriteLine(scripture.GetDisplayText(true));
+            }
             
             input = ReadLine();
             
@@ -54,6 +63,8 @@ class Program
             }
             
             Clear();
+
+            i++;
         } while (input != "quit");
     }
 }
