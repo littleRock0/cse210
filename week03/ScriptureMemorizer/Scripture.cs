@@ -30,7 +30,7 @@ public class Scripture
     {
         int maxRange;
         
-        if (_words.Count + 1 / 2 >= 5)
+        if ((_words.Count + 1) / 2 >= 5)
         {
             maxRange = 5;
         }
