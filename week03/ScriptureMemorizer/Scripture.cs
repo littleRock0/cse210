@@ -29,6 +29,7 @@ public class Scripture
     public void HideRandomWords(bool hide)
     {
         int maxRange;
+        int remaining = CountWordsRemaining();
         
         if ((_words.Count + 1) / 2 >= 5)
         {
@@ -40,6 +41,11 @@ public class Scripture
         }
         
         int countToHide = number.Next(1, maxRange);
+        
+        if (countToHide > remaining)
+        {
+            countToHide = remaining;
+        }
         
         if (hide)
         {
@@ -89,5 +95,19 @@ public class Scripture
         }
         
         return true;
+    }
+
+    public int CountWordsRemaining()
+    {
+        int count = 0;
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                count++;
+            }
+        }
+        
+        return count;
     }
 }
