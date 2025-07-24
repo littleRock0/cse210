@@ -27,7 +27,7 @@ public class GetScripture
         
         string scripture = _scriptures[scriptureNum];
         
-        scriptureParts = scripture.Split(",");
+        scriptureParts = scripture.Split("|");
         
         string book = scriptureParts[0];
         int chapter = int.Parse(scriptureParts[1]);
