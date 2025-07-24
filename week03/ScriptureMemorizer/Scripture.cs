@@ -96,7 +96,7 @@ public class Scripture
         
         return true;
     }
-
+    
     public int CountWordsRemaining()
     {
         int count = 0;
