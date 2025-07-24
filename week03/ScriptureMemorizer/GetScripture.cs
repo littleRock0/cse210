@@ -6,7 +6,7 @@ using System;
 using System.IO;
 using static System.Console;
 
-public class GetScripture()
+public class GetScripture
 {
     private List<string> _scriptures = new List<string>();
     
