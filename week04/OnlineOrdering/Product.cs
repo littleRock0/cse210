@@ -5,10 +5,7 @@
 using System;
 using static System.Console;
 
-class Program
+public class Product
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello World! This is the OnlineOrdering Project.");
-    }
+    
 }
