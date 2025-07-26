@@ -7,5 +7,8 @@ using static System.Console;
 
 public class Product
 {
-    
+    private string _name;
+    private string _productId;
+    private float _price;
+    private int _quantity;
 }
