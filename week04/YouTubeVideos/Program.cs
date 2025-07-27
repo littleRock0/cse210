@@ -9,6 +9,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the YouTubeVideos Project.");
+        Video video1 = new Video("Minecraft LDS Temples Build", "Kobayashi",
+            1966);
+        Comment comment1 = new Comment("robot_pineapple", "Could you " +
+            "provide the material lists for each of these builds?");
     }
 }
