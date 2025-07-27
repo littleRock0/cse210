@@ -27,6 +27,6 @@ public class Address
     
     public string GetDisplayText()
     {
-        
+        return "";
     }
 }

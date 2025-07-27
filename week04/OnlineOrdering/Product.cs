@@ -12,7 +12,7 @@ public class Product
     private float _price;
     private int _quantity;
     
-    public Product(string name, int productId, float price, int quantity)
+    public Product(string name, string productId, float price, int quantity)
     {
         _name = name;
         _productId = productId;
@@ -27,6 +27,6 @@ public class Product
     
     public string GetDisplayText()
     {
-        
+        return "";
     }
 }

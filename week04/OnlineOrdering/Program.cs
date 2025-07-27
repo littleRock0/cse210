@@ -11,7 +11,7 @@ class Program
     {
         Address address1 = new Address("2736N 557W", "Baker", "Utah", "USA");
         Customer customer1 = new Customer("Johan Smidt", address1);
-        Product product1 = new Product("", 0, 0.00, 0);
+        Product product1 = new Product("", "0", 0.00f, 0);
         Order order1 = new Order(customer1);
     }
 }

@@ -18,7 +18,7 @@ public class Customer
     
     public bool InUSA()
     {
-        if (_address.CheckCountry() == USA)
+        if (_address.CheckCountry() == "USA")
         {
             return true;
         }
@@ -31,5 +31,6 @@ public class Customer
     public string GetDisplayText()
     {
         string address = _address.GetDisplayText();
+        return "";
     }
 }
