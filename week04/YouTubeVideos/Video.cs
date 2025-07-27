@@ -35,6 +35,6 @@ public class Video
     
     public string GetDisplayText()
     {
-        
+        return "";
     }
 }

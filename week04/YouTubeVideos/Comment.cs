@@ -18,6 +18,6 @@ public class Comment
     
     public string GetDisplayText()
     {
-        
+        return "";
     }
 }
