@@ -12,4 +12,21 @@ public class Product
     private float _price;
     private int _quantity;
     
+    public Product(string name, int productId, float price, int quantity)
+    {
+        _name = name;
+        _productId = productId;
+        _price = price;
+        _quantity = quantity;
+    }
+    
+    public float CoatTotal()
+    {
+        return _price * _quantity;
+    }
+    
+    public string GetDisplayText()
+    {
+        
+    }
 }
