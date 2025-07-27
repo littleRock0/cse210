@@ -9,14 +9,14 @@ public class Address
 {
     private string _streetAddress;
     private string _city;
-    private string _state;
+    private string _region;
     private string _country;
     
-    public Address(string streetAddress, string city, string state, string country)
+    public Address(string streetAddress, string city, string region, string country)
     {
         _streetAddress = streetAddress;
         _city = city;
-        _state = state;
+        _region = region;
         _country = country;
     }
     

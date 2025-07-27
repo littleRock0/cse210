@@ -9,6 +9,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the OnlineOrdering Project.");
+        Address address1 = new Address("2736N 557W", "Baker", "Utah", "USA");
+        Customer customer1 = new Customer("Johan Smidt", address1);
+        Product product1 = new Product("", 0, 0.00, 0);
+        Order order1 = new Order(customer1);
     }
 }
