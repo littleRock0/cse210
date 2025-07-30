@@ -18,6 +18,6 @@ public class Comment
     
     public string GetDisplayText()
     {
-        return $"{_name}: {_text}\n\n";
+        return $"{_name}: {_text}\n";
     }
 }

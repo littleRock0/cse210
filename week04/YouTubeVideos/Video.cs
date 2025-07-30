@@ -68,7 +68,7 @@ public class Video
             comments += comment.GetDisplayText();
         }
         
-        return $"{_title} by {_author} Duration({time}) {CommentCount()}" +
-        $"\n\n Comments:\n{comments} \n\n";
+        return $"{_title} by {_author} Duration({time}) \n\nComments" +
+        $"({CommentCount()}):\n{comments} \n\n\n";
     }
 }

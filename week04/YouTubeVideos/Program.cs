@@ -35,5 +35,9 @@ class Program
             "this project?");
         video3.AddComment("total_whipe_out", "Could you drop us the plans" +
             " for this ? ");
+
+        Write(video1.GetDisplayText());
+        Write(video2.GetDisplayText());
+        Write(video3.GetDisplayText());
     }
 }
