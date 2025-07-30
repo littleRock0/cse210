@@ -10,8 +10,31 @@ class Program
     static void Main(string[] args)
     {
         Video video1 = new Video("Minecraft LDS Temples Build", "Kobayashi",
+            2966);
+        video1.AddComment("robot_pineapple", "Could you provide the " +
+            "material lists for each of these builds?");
+        video1.AddComment("AlanChevyGuy", "  ");
+        video1.AddComment("AlfredoCheese", "Could you upload a detailed " +
+            $"tutorial the Logan Utah Temple?");
+        video1.AddComment("SoNotABot", "NiceVideo CouldWeGetSchems?");
+        
+        Video video2 = new Video("Almost didn't make it back from this one",
+            "climbing@redmont", 47);
+        video2.AddComment("BLR", "Glad you made it back in one piece.");
+        video2.AddComment("RedThing5G0F@st", "Dude!!!");
+        video2.AddComment("longtimefan", "Hope the wife doesn't see this " +
+        "one ;P");
+        video2.AddComment("#girls_climb2", "nice forearms");
+        
+        Video video3 = new Video("Minecraft LDS Temples Build", "RedMonster",
             1966);
-        Comment comment1 = new Comment("robot_pineapple", "Could you " +
-            "provide the material lists for each of these builds?");
+        video3.AddComment("robot_pineapple", "Could you provide the " +
+            "material lists for each of these builds?");
+        video3.AddComment("robot_pineapple", "Could you provide the " +
+            "material lists for each of these builds?");
+        video3.AddComment("robot_pineapple", "Could you provide the " +
+            "material lists for each of these builds?");
+        video3.AddComment("robot_pineapple", "Could you provide the " +
+            "material lists for each of these builds?");
     }
 }
