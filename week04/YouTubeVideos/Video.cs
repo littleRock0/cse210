@@ -24,17 +24,7 @@ public class Video
         _comments.Add(new Comment(name, text));
     }
     
-    public int CommentCount()
-    {
-        int count = 0;
-        
-        foreach (Comment comment in _comments)
-        {
-            count++;
-        }
-        
-        return count;
-    }
+    public int CommentCount() => _comments.Count;
     
     public string FormatLength()
     {
@@ -49,14 +39,14 @@ public class Video
             minutes = (int)((_length % 3600) / 60);
             seconds = (int)(_length % 60);
             
-            time = $"{hours}:{minutes}:{seconds} hours";
+            time = $"{hours}:{minutes:D2}:{seconds:D2} hours";
         }
         else if (_length >= 60)
         {
             minutes = (int)(_length / 60);
             seconds = (int)(_length % 60);
             
-            time = $"{minutes}:{seconds} minutes";
+            time = $"{minutes}:{seconds:D2} minutes";
         }
         else if (_length < 60)
         {
