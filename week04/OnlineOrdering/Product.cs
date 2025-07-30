@@ -20,13 +20,13 @@ public class Product
         _quantity = quantity;
     }
     
-    public float CoatTotal()
+    public float CostTotal()
     {
         return _price * _quantity;
     }
     
     public string GetDisplayText()
     {
-        return "";
+        return $"{_productId}: {_name}";
     }
 }

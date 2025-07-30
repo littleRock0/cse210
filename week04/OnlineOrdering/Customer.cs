@@ -31,6 +31,6 @@ public class Customer
     public string GetDisplayText()
     {
         string address = _address.GetDisplayText();
-        return "";
+        return $"          {_name}\nShip To:  {address}";
     }
 }
