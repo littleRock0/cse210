@@ -21,7 +21,8 @@ class Program
             2966);
         video1.AddComment("robot_pineapple", "Could you provide the " +
             "material lists for each of these builds?");
-        video1.AddComment("AlanChevyGuy", "  ");
+        video1.AddComment("AlanChevyGuy", "Wow that's really impressive " +
+            "you're awesome!");
         video1.AddComment("AlfredoCheese", "Could you upload a detailed " +
             $"tutorial the Logan Utah Temple?");
         video1.AddComment("SoNotABot", "NiceVideo CouldWeGetSchems?");
