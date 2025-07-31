@@ -14,7 +14,7 @@ public class Order
     {
         _customer = customer;
     }
-
+    
     public void AddProduct(string name, string productId, float price,
         int quantity)
     {
@@ -24,12 +24,12 @@ public class Order
     public float PriceTotal()
     {
         float total = 0;
-
+        
         foreach (Product product in _products)
         {
             total += product.CostTotal();
         }
-
+        
         if (_customer.InUSA())
         {
             total += 5;
@@ -38,7 +38,7 @@ public class Order
         {
             total += 35;
         }
-
+        
         return total;
     }
     
@@ -58,11 +58,11 @@ public class Order
         
         return $"Packing Label:\n{packingLabel}\n\n";
     }
-
+    
     public string GetShippingLabel()
     {
         string shippingLabel;
-
+        
         shippingLabel = $"Shipping Label:\n{_customer.GetDisplayText()}\n";
         
         return shippingLabel;
