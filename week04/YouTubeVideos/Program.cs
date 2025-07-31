@@ -14,6 +14,7 @@ class Program
             Write(video.GetDisplayText());
         }
     }
+    
     static void Main(string[] args)
     {
         Video video1 = new Video("Minecraft LDS Temples Build", "Kobayashi",
@@ -24,7 +25,7 @@ class Program
         video1.AddComment("AlfredoCheese", "Could you upload a detailed " +
             $"tutorial the Logan Utah Temple?");
         video1.AddComment("SoNotABot", "NiceVideo CouldWeGetSchems?");
-
+        
         Video video2 = new Video("Almost didn't make it back from this one",
             "climbing@redmont", 47);
         video2.AddComment("BLR", "Glad you made it back in one piece.");
@@ -32,7 +33,7 @@ class Program
         video2.AddComment("longtimefan", "Hope the wife doesn't see this " +
             "one ;P");
         video2.AddComment("#girls_climb2", "nice forearms");
-
+        
         Video video3 = new Video("We Built A Giant Obstical Course",
             "RedMonster", 2192);
         video3.AddComment("littleRock", "I wish I had the money for this");
@@ -42,7 +43,7 @@ class Program
             "this project?");
         video3.AddComment("total_whipe_out", "Could you drop us the plans" +
             " for this ? ");
-
+        
         Display(new List<Video> { video1, video2, video3 });
     }
 }
