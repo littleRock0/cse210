@@ -42,11 +42,6 @@ public class Order
         return total;
     }
     
-    public string GetDisplayText()
-    {
-        return "";
-    }
-    
     public string GetPackingLabel()
     {
         string packingLabel = "";
@@ -56,15 +51,22 @@ public class Order
             packingLabel += product.GetDisplayText() + "\n";
         }
         
-        return $"Packing Label:\n{packingLabel}\n\n";
+        return $"Packing Label:\n{packingLabel}\n";
     }
     
     public string GetShippingLabel()
     {
         string shippingLabel;
         
-        shippingLabel = $"Shipping Label:\n{_customer.GetDisplayText()}\n";
+        shippingLabel = $"Shipping Label:\n{_customer.GetDisplayText()}" +
+            "\n\n \n ";
         
         return shippingLabel;
+    }
+    
+    public string GetDisplayText()
+    {
+        return $"Order:\nTotal:${PriceTotal()}\n\n{GetPackingLabel()}" +
+            GetShippingLabel();
     }
 }

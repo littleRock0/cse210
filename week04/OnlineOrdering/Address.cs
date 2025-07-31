@@ -27,6 +27,7 @@ public class Address
     
     public string GetDisplayText()
     {
-        return $"{_streetAddress}\n{_city},{_region}\n{_country}";
+        return $"{_streetAddress}\n          {_city}, {_region}\n" +
+            $"          {_country}";
     }
 }
