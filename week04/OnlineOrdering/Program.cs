@@ -15,7 +15,7 @@ class Program
         order1.AddProduct("100x Carpenter Pencils", "100xCar_Pen", 15.23f,
             2);
         order1.AddProduct("3x Fine Tip Sharpie", "3xFTSharp", 1.28f, 47);
-
+        
         Order order2 = new Order(new Customer("Bartolemue Vorevochke", new
             Address("Ulitsa Lenina, 27", "Kostroma", "Kostromskaya Oblast",
             "Russia")));
@@ -25,7 +25,7 @@ class Program
             "HoA_Sanderson", 36.75f, 4);
         order2.AddProduct("Elantris By Brandon Sanderson", "Elnt_Sanderson",
             37.63f, 2);
-
+        
         Write(order1.GetDisplayText());
         Write(order2.GetDisplayText());
     }
