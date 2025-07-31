@@ -59,7 +59,7 @@ public class Order
         string shippingLabel;
         
         shippingLabel = $"Shipping Label:\n{_customer.GetDisplayText()}" +
-            "\n\n \n ";
+            "\n\n \n";
         
         return shippingLabel;
     }
