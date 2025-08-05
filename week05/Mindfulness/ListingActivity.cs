@@ -29,7 +29,7 @@ class ListingActivity : Activity
     {
         
     }
-
+    
     public List<string> GetListFromUser()
     {
         return _prompts;
