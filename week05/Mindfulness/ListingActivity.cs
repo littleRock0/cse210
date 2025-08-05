@@ -9,7 +9,7 @@ class ListingActivity : Activity
 {
     private int _count;
     private List<string> _prompts = new List<string>();
-
+    
     private ListingActivity(int count, string name, string description,
         int duration) : base(name, description, duration)
     {
