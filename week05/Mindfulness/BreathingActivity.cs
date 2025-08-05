@@ -4,3 +4,11 @@
 ***************************************************************************/
 using System;
 using static System.Console;
+
+class BreathingActivity
+{
+    public BreathingActivity()
+    {
+        
+    }
+}
