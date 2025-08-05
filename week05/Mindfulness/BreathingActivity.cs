@@ -5,9 +5,14 @@
 using System;
 using static System.Console;
 
-class BreathingActivity
+class BreathingActivity : Activity
 {
     public BreathingActivity()
+    {
+        
+    }
+    
+    public void Run()
     {
         
     }
