@@ -19,7 +19,17 @@ class ReflectingActivity : Activity
     
     public void Run()
     {
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(_duration);
         
+        DateTime currentTime = DateTime.Now;
+        
+        while (currentTime <= futureTime)
+        {
+            
+        }
+        
+        return;
     }
     
     public string GetRandomPrompt()

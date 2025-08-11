@@ -20,7 +20,7 @@ class ListingActivity : Activity
     {
         _prompts.Add(prompt);
     }
-
+    
     public void Run()
     {
         DateTime startTime = DateTime.Now;
