@@ -33,13 +33,14 @@ class Program
         
         int actNum = Menu();
         
-        switch (actNum)
+        (string, int) DoAction(int actNum) =>
+        actNum switch
         {
-            1: ListingActivityFunc();
-            2: ReflectingActivityFunc();
-            3: BreathingActivityFunc();
-            4: return;
-            default: WriteLine("Not a valid option");
-        }
+            1 => ListingActivityFunc(),
+            2 => ReflectingActivityFunc(),
+            3 => BreathingActivityFunc(),
+            4 => ("Exit", 0),
+            _ => ("Invalid Option", -1)
+        };
     }
 }

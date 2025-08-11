@@ -28,7 +28,8 @@ class Activity
         Clear();
         
         WriteLine("Prepare to begin");
-        ShowSpinner(_duration);
+        
+        ShowSpinner(4);
     }
     
     public void DisplayEndMessage()
@@ -45,6 +46,7 @@ class Activity
     public void ShowSpinner(int seconds)
     {
         int loops = (seconds / 2);
+        
         for (int i = 0; i <= loops; i++)
         {
             Write("|");
@@ -68,11 +70,15 @@ class Activity
             
             Write("\b \b");
         }
-        
     }
     
     public void ShowCountDown(int seconds)
     {
-        
+        for (int i = 0; i <= seconds; i++)
+        {
+            Write(seconds);
+            
+            Thread.Sleep(1000);
+        }
     }
 }
