@@ -20,7 +20,7 @@ class ListingActivity : Activity
     {
         _prompts.Add(prompt);
     }
-    
+
     public void Run()
     {
         DateTime startTime = DateTime.Now;
@@ -32,6 +32,8 @@ class ListingActivity : Activity
         {
             
         }
+        
+        return;
     }
     
     public void GetRandomPrompt()
