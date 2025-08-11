@@ -11,7 +11,7 @@ class ReflectingActivity : Activity
     private List<string> _questions = new List<string>();
     
     public ReflectingActivity(string prompt, string question, string name,
-        string description, int duration) : base(name, description, duration)
+        string description, int duration) : base(name, description)
     {
         _prompts.Add(prompt);
         _prompts.Add(question);
