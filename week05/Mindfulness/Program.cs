@@ -13,7 +13,7 @@ class Program
             "1. Listing Activity\n" +
             "2. Reflecting Activity\n" +
             "3. Breathing Activity\n" +
-            "2. Quit\n");
+            "4. Quit\n");
         
         int i = int.Parse(ReadLine());
         
@@ -21,7 +21,7 @@ class Program
         
         return i;
     }
-
+    
     static Tuple<string, int> ListingActivityFunc()
     {
         

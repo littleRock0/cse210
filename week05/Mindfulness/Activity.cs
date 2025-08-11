@@ -22,7 +22,7 @@ class Activity
         Write($"You have selected {_name}\n{_description}" +
             "How long would you like to spend on this activity" +
             "(in seconds)? ");
-
+        
         _duration = int.Parse(ReadLine());
         
         Clear();
