@@ -10,8 +10,8 @@ class ListingActivity : Activity
     private int _count;
     private List<string> _prompts = new List<string>();
     
-    private ListingActivity(int count, string name, string description,
-        int duration) : base(name, description)
+    private ListingActivity(int count, string name, string description) :
+        base(name, description)
     {
         _count = count;
     }
@@ -36,9 +36,22 @@ class ListingActivity : Activity
         return;
     }
     
-    public void GetRandomPrompt()
+    public string GetRandomPrompt()
     {
+        string file = "ListingPrompts.txt";
+        string[] lines = File.ReadAllLines(file);
         
+        foreach (string line in lines)
+        {
+            AddPrompt(line);
+        }
+        
+        Random number = new Random();
+        int promptNum = number.Next(0, lines.Length);
+        
+        string prompt = _prompts[promptNum];
+        
+        return prompt;
     }
     
     public List<string> GetListFromUser()

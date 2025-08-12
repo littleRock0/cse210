@@ -7,8 +7,8 @@ using static System.Console;
 
 class Activity
 {
-    protected string _name;
-    protected string _description;
+    private string _name;
+    private string _description;
     protected int _duration;
     
     public Activity(string name, string description)
@@ -47,7 +47,7 @@ class Activity
     {
         int loops = (seconds / 2);
         
-        for (int i = 0; i <= loops; i++)
+        for (int i = 0; i < loops; i++)
         {
             Write("|");
             
@@ -74,7 +74,7 @@ class Activity
     
     public void ShowCountDown(int seconds)
     {
-        for (int i = 0; i <= seconds; i++)
+        for (int i = 0; i < seconds; i++)
         {
             Write(seconds);
             

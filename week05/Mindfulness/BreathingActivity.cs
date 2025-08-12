@@ -7,22 +7,53 @@ using static System.Console;
 
 class BreathingActivity : Activity
 {
-    public BreathingActivity(string name, string description, int duration)
-        : base(name, description, duration)
+    public BreathingActivity(string name, string description): base(name,
+        description)
     {
         
     }
     
     public void Run()
     {
-        DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(_duration);
+        const int breath = 6;
+        int remaining = _duration;
         
-        DateTime currentTime = DateTime.Now;
-        
-        while (currentTime <= futureTime)
+        while (remaining >= 12)
         {
+            Write("Breath in ...");
             
+            ShowCountDown(breath);
+            
+            remaining -= breath;
+            
+            Write("Breath out ... ");
+            
+            ShowCountDown(breath);
+            
+            remaining -= breath;
+        }
+        
+        if (remaining >= 6)
+        {
+            Write("Breath in ...");
+            
+            ShowCountDown(breath);
+            
+            remaining -= breath;
+            
+            Write("Breath out ... ");
+            
+            ShowCountDown(remaining);
+        }
+        else
+        {
+            Write("Breath in ...");
+            
+            ShowCountDown(remaining);
+            
+            Write("Breath out ... ");
+            
+            ShowCountDown(3);
         }
         
         return;

@@ -1,6 +1,9 @@
 /***************************************************************************
  * replaced WriteLine with Write to get rid of appended newline character
  * added using static System.Console; to shorten the code
+ * Showing Creativity:
+ *  pulling prompts from a file (a separate one per activity that needs it)
+ *  
 ***************************************************************************/
 using System;
 using static System.Console;
