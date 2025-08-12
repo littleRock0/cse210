@@ -27,18 +27,18 @@ class Activity
         
         Clear();
         
-        WriteLine("Prepare to begin");
+        WriteLine("Prepare to begin\n");
         
         ShowSpinner(4);
     }
     
     public void DisplayEndMessage()
     {
-        WriteLine("Well done!");
+        WriteLine("\nWell done!");
         
         ShowSpinner(4);
         
-        WriteLine($"You completed another {_duration} of {_name}");
+        WriteLine($"\nYou completed another {_duration} seconds of {_name}");
         
         ShowSpinner(4);
     }
@@ -70,19 +70,20 @@ class Activity
             
             Write("\b \b");
         }
-        
-        Write("\n");
     }
     
     public void ShowCountDown(int seconds)
     {
+        int remaining = seconds;
         for (int i = 0; i < seconds; i++)
         {
-            Write(seconds);
+            Write(remaining);
             
             Thread.Sleep(1000);
             
             Write("\b \b");
+            
+            remaining -= 1;
         }
         
         Write("\n");

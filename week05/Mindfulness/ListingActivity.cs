@@ -42,6 +42,8 @@ class ListingActivity : Activity
             ReadLine();
             
             _count++;
+            
+            currentTime = DateTime.Now;
         }
         
         WriteLine($"You listed {_count} items!");

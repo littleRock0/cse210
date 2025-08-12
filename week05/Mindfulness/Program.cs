@@ -13,6 +13,8 @@ class Program
 {
     static int Menu()
     {
+        Clear();
+        
         Write("Please select one of the folowing:\n" +
             "1. Listing Activity\n" +
             "2. Reflecting Activity\n" +
@@ -33,6 +35,8 @@ class Program
             "your life by having you list as many things as you can in " +
             "a certain area.");
         
+        listing1.Run();
+        
         return false;
     }
     
@@ -44,6 +48,8 @@ class Program
             "resilience. This will help you recognize the power you have" +
             " and how you can use it in other aspects of your life.");
         
+        reflecting1.Run();
+        
         return false;
     }
     
@@ -53,6 +59,8 @@ class Program
             "Breathing Activity", "This activity will help you relax by " +
             "walking your through breathing in and out slowly. Clear your" +
             " mind and focus on your breathing.");
+        
+        breathing1.Run();
         
         return false;
     }

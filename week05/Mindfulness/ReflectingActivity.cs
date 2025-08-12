@@ -9,11 +9,27 @@ class ReflectingActivity : Activity
 {
     private List<string> _prompts = new List<string>();
     private List<string> _questions = new List<string>();
+    private string[] _lines1;
+    private string[] _lines2;
     
     public ReflectingActivity(string name,
         string description) : base(name, description)
     {
+        string file1 = "ReflectingPrompts.txt";
+        _lines1 = File.ReadAllLines(file1);
         
+        foreach (string line in _lines1)
+        {
+            AddPrompt(line);
+        }
+        
+        string file2 = "ReflectingQuestions.txt";
+        _lines2 = File.ReadAllLines(file2);
+        
+        foreach (string line in _lines2)
+        {
+            AddQuestion(line);
+        }
     }
     
     public void AddPrompt(string prompt)
@@ -23,7 +39,7 @@ class ReflectingActivity : Activity
     
     public void AddQuestion(string question)
     {
-        _prompts.Add(question);
+        _questions.Add(question);
     }
     
     public void Run()
@@ -35,11 +51,15 @@ class ReflectingActivity : Activity
         
         DateTime currentTime = DateTime.Now;
         
-        DisplayPrompt();
+        Random number = new Random();
+        
+        DisplayPrompt(number);
         
         while (currentTime <= futureTime)
         {
-            DisplayQuestions();
+            DisplayQuestions(number);
+            
+            currentTime = DateTime.Now;
         }
         
         DisplayEndMessage();
@@ -47,46 +67,28 @@ class ReflectingActivity : Activity
         return;
     }
     
-    public string GetRandomPrompt()
+    public string GetRandomPrompt(Random number)
     {
-        string file = "ReflectingPrompts.txt";
-        string[] lines = File.ReadAllLines(file);
-        
-        foreach (string line in lines)
-        {
-            AddPrompt(line);
-        }
-        
-        Random number = new Random();
-        int promptNum = number.Next(0, lines.Length);
+        int promptNum = number.Next(0, _lines1.Length);
         
         string prompt = _prompts[promptNum];
         
         return prompt;
     }
     
-    public string GetRandomQuestion()
+    public string GetRandomQuestion(Random number)
     {
-        string file = "ReflectingQuestions.txt";
-        string[] lines = File.ReadAllLines(file);
-        
-        foreach (string line in lines)
-        {
-            AddQuestion(line);
-        }
-        
-        Random number = new Random();
-        int questionNum = number.Next(0, lines.Length);
+        int questionNum = number.Next(0, _lines2.Length);
         
         string question = _questions[questionNum];
         
         return question;
     }
     
-    public void DisplayPrompt()
+    public void DisplayPrompt(Random number)
     {
         WriteLine("Consider the following: \n");
-        WriteLine($" --- {GetRandomPrompt} --- \n");
+        WriteLine($" --- {GetRandomPrompt(number)} --- \n");
         Write("When you have something in mind press enter.\n");
         
         ReadLine();
@@ -100,9 +102,9 @@ class ReflectingActivity : Activity
         Clear();
     }
     
-    public void DisplayQuestions()
+    public void DisplayQuestions(Random number)
     {
-        Write($"> {GetRandomQuestion()}");
+        Write($"> {GetRandomQuestion(number)} ");
         
         ShowSpinner(5);
         
