@@ -15,6 +15,8 @@ class BreathingActivity : Activity
     
     public void Run()
     {
+        DisplaySartingMessage();
+        
         const int breath = 6;
         int remaining = _duration;
         
@@ -55,6 +57,8 @@ class BreathingActivity : Activity
             
             ShowCountDown(3);
         }
+        
+        DisplayEndMessage();
         
         return;
     }

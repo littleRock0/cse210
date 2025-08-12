@@ -28,15 +28,21 @@ class ReflectingActivity : Activity
     
     public void Run()
     {
+        DisplaySartingMessage();
+        
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_duration);
         
         DateTime currentTime = DateTime.Now;
         
+        DisplayPrompt();
+        
         while (currentTime <= futureTime)
         {
-            
+            DisplayQuestions();
         }
+        
+        DisplayEndMessage();
         
         return;
     }
@@ -79,11 +85,27 @@ class ReflectingActivity : Activity
     
     public void DisplayPrompt()
     {
+        WriteLine("Consider the following: \n");
+        WriteLine($" --- {GetRandomPrompt} --- \n");
+        Write("When you have something in mind press enter.\n");
         
+        ReadLine();
+        
+        Write("Now ponder each of the following questions as they relate to " +
+            "this experience.\n");
+        Write("You may begin in: ");
+        
+        ShowCountDown(4);
+        
+        Clear();
     }
     
     public void DisplayQuestions()
     {
+        Write($"> {GetRandomQuestion()}");
         
+        ShowSpinner(5);
+        
+        WriteLine();
     }
 }

@@ -70,6 +70,8 @@ class Activity
             
             Write("\b \b");
         }
+        
+        Write("\n");
     }
     
     public void ShowCountDown(int seconds)

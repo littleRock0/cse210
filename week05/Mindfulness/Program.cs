@@ -4,7 +4,7 @@
  * Showing Creativity:
  *  pulling prompts from a file (a separate one per activity that needs it)
  *  removed GetListFromUser as that is handled by GetRandomPrompt(Question)
- *  
+ *  made a point to use every type of loop in C# atleased once
 ***************************************************************************/
 using System;
 using static System.Console;

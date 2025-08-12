@@ -23,17 +23,30 @@ class ListingActivity : Activity
     
     public void Run()
     {
+        DisplaySartingMessage();
+        
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_duration);
-        
         DateTime currentTime = DateTime.Now;
+        
+        WriteLine("List as many responses as you can to:");
+        WriteLine($" --- {GetRandomPrompt()} --- ");
+        Write("You may begin in: ");
+        
+        ShowCountDown(5);
         
         while (currentTime <= futureTime)
         {
+            Write("> ");
+            
+            ReadLine();
+            
             _count++;
         }
         
         WriteLine($"You listed {_count} items!");
+        
+        DisplayEndMessage();
         
         return;
     }
