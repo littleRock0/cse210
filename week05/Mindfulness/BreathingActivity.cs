@@ -20,13 +20,13 @@ class BreathingActivity : Activity
         
         while (remaining >= 12)
         {
-            Write("Breath in ...");
+            Write("\nBreath in ...");
             
             ShowCountDown(breath);
             
             remaining -= breath;
             
-            Write("Breath out ... ");
+            Write("\nBreath out ... ");
             
             ShowCountDown(breath);
             
@@ -35,23 +35,23 @@ class BreathingActivity : Activity
         
         if (remaining >= 6)
         {
-            Write("Breath in ...");
+            Write("\nBreath in ...");
             
             ShowCountDown(breath);
             
             remaining -= breath;
             
-            Write("Breath out ... ");
+            Write("\nBreath out ... ");
             
             ShowCountDown(remaining);
         }
         else
         {
-            Write("Breath in ...");
+            Write("\nBreath in ...");
             
             ShowCountDown(remaining);
             
-            Write("Breath out ... ");
+            Write("\nBreath out ... ");
             
             ShowCountDown(3);
         }

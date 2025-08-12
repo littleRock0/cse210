@@ -19,7 +19,7 @@ class Activity
     
     public void DisplaySartingMessage()
     {
-        Write($"You have selected {_name}\n{_description}" +
+        Write($"You have selected {_name}\n\n{_description}\n\n" +
             "How long would you like to spend on this activity" +
             "(in seconds)? ");
         
@@ -79,6 +79,10 @@ class Activity
             Write(seconds);
             
             Thread.Sleep(1000);
+            
+            Write("\b \b");
         }
+        
+        Write("\n");
     }
 }

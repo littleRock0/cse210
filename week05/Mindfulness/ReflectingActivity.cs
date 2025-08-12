@@ -13,7 +13,16 @@ class ReflectingActivity : Activity
     public ReflectingActivity(string name,
         string description) : base(name, description)
     {
+        
+    }
+    
+    public void AddPrompt(string prompt)
+    {
         _prompts.Add(prompt);
+    }
+    
+    public void AddQuestion(string question)
+    {
         _prompts.Add(question);
     }
     
@@ -34,12 +43,38 @@ class ReflectingActivity : Activity
     
     public string GetRandomPrompt()
     {
-        return "";
+        string file = "ReflectingPrompts.txt";
+        string[] lines = File.ReadAllLines(file);
+        
+        foreach (string line in lines)
+        {
+            AddPrompt(line);
+        }
+        
+        Random number = new Random();
+        int promptNum = number.Next(0, lines.Length);
+        
+        string prompt = _prompts[promptNum];
+        
+        return prompt;
     }
     
     public string GetRandomQuestion()
     {
-        return "";
+        string file = "ReflectingQuestions.txt";
+        string[] lines = File.ReadAllLines(file);
+        
+        foreach (string line in lines)
+        {
+            AddQuestion(line);
+        }
+        
+        Random number = new Random();
+        int questionNum = number.Next(0, lines.Length);
+        
+        string question = _questions[questionNum];
+        
+        return question;
     }
     
     public void DisplayPrompt()
