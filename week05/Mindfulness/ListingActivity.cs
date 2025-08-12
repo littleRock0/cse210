@@ -33,6 +33,8 @@ class ListingActivity : Activity
             _count++;
         }
         
+        WriteLine($"You listed {_count} items!");
+        
         return;
     }
     
