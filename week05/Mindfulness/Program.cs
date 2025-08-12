@@ -25,19 +25,23 @@ class Program
         return i;
     }
     
-    static Tuple<string, int> ListingActivityFunc()
+    static string ListingActivityFunc()
     {
+        ListingActivity listingActivity1 = new ListingActivity(
+            "Listing Activity", "This activity will help you reflect on " +
+            "the good things in your life by having you list as many " +
+            "things as you can in a certain area.");
         
+        return "";
     }
     
     static void Main(string[] args)
     {
-        Activity activity1 = new Activity("", "", 0);
+        Activity activity1 = new Activity("", "");
         
         int actNum = Menu();
         
-        (string, int) DoAction(int actNum) =>
-        actNum switch
+        _ = actNum switch
         {
             1 => ListingActivityFunc(),
             2 => ReflectingActivityFunc(),

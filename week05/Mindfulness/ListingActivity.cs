@@ -10,13 +10,13 @@ class ListingActivity : Activity
     private int _count;
     private List<string> _prompts = new List<string>();
     
-    private ListingActivity(int count, string name, string description) :
+    public ListingActivity(string name, string description) :
         base(name, description)
     {
-        _count = count;
+        _count = 0;
     }
     
-    private void AddPrompt(string prompt)
+    public void AddPrompt(string prompt)
     {
         _prompts.Add(prompt);
     }
@@ -30,7 +30,7 @@ class ListingActivity : Activity
         
         while (currentTime <= futureTime)
         {
-            
+            _count++;
         }
         
         return;
