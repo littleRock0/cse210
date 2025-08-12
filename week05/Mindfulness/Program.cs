@@ -3,6 +3,7 @@
  * added using static System.Console; to shorten the code
  * Showing Creativity:
  *  pulling prompts from a file (a separate one per activity that needs it)
+ *  removed GetListFromUser as that is handled by GetRandomPrompt(Question)
  *  
 ***************************************************************************/
 using System;
@@ -25,14 +26,35 @@ class Program
         return i;
     }
     
-    static string ListingActivityFunc()
+    static bool ListingActivityFunc()
     {
-        ListingActivity listingActivity1 = new ListingActivity(
-            "Listing Activity", "This activity will help you reflect on " +
-            "the good things in your life by having you list as many " +
-            "things as you can in a certain area.");
+        ListingActivity listing1 = new ListingActivity("Listing Activity",
+            "This activity will help you reflect on the good things in " +
+            "your life by having you list as many things as you can in " +
+            "a certain area.");
         
-        return "";
+        return false;
+    }
+    
+    static bool ReflectingActivityFunc()
+    {
+        ReflectingActivity reflecting1 = new ReflectingActivity(
+            "Reflecting Activity", "This activity will help you reflect " +
+            "on times in your life when you have shown strength and " +
+            "resilience. This will help you recognize the power you have" +
+            " and how you can use it in other aspects of your life.");
+        
+        return false;
+    }
+    
+    static bool BreathingActivityFunc()
+    {
+        BreathingActivity breathing1 = new BreathingActivity(
+            "Breathing Activity", "This activity will help you relax by " +
+            "walking your through breathing in and out slowly. Clear your" +
+            " mind and focus on your breathing.");
+        
+        return false;
     }
     
     static void Main(string[] args)
@@ -40,14 +62,24 @@ class Program
         Activity activity1 = new Activity("", "");
         
         int actNum = Menu();
+        bool quit;
+        bool invalidSelection = false;
         
-        _ = actNum switch
+        do
         {
-            1 => ListingActivityFunc(),
-            2 => ReflectingActivityFunc(),
-            3 => BreathingActivityFunc(),
-            4 => ("Exit", 0),
-            _ => ("Invalid Option", -1)
-        };
+            quit = actNum switch
+            {
+                1 => ListingActivityFunc(),
+                2 => ReflectingActivityFunc(),
+                3 => BreathingActivityFunc(),
+                4 => true,
+                _ => invalidSelection = true,
+            };
+            
+            if (invalidSelection)
+            {
+                Write("Invalid option\n");
+            }
+        } while (!quit);
     }
 }
