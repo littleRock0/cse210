@@ -53,9 +53,4 @@ class ListingActivity : Activity
         
         return prompt;
     }
-    
-    public List<string> GetListFromUser()
-    {
-        return _prompts;
-    }
 }
