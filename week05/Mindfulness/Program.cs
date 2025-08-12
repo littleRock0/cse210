@@ -58,15 +58,14 @@ class Program
     }
     
     static void Main(string[] args)
-    {
-        Activity activity1 = new Activity("", "");
-        
-        int actNum = Menu();
+    {       
         bool quit;
         bool invalidSelection = false;
         
         do
         {
+            int actNum = Menu();
+            
             quit = actNum switch
             {
                 1 => ListingActivityFunc(),
