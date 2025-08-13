@@ -5,36 +5,27 @@
 using System;
 using static System.Console;
 
-class Goal
+public abstract class  Goal
 {
     private string _shortname;
     private string _description;
-    private string _points;
+    private string _xp;
     
-    public Goal(string name, string description, string points)
+    public Goal(string name, string description, string xp)
     {
         _shortname = name;
         _description = description;
-        _points = points;
+        _xp = xp;
     }
     
-    public virtual void RecordEvent()
-    {
-        
-    }
+    public abstract void RecordEvent();
     
-    public virtual bool IsComplete()
-    {
-        
-    }
+    public abstract bool IsComplete();
     
     public virtual string GetDetailsString()
     {
         
     }
     
-    public virtual string GetStringRepresentation()
-    {
-        
-    }
+    public abstract string GetStringRepresentation();
 }

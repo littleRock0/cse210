@@ -5,27 +5,27 @@
 using System;
 using static System.Console;
 
-class SimpleGoal : Goal
+public class SimpleGoal : Goal
 {
     private bool _iscomplete;
 
-    public SimpleGoal(string name, string description, string points) :
-        base(name, description, points)
+    public SimpleGoal(string name, string description, string xp) :
+        base(name, description, xp)
     {
         
     }
     
-    public virtual void RecordEvent()
+    public override void RecordEvent()
     {
         
     }
     
-    public virtual bool IsComplete()
+    public override bool IsComplete()
     {
         
     }
     
-    public virtual string GetStringRepresentation()
+    public override string GetStringRepresentation()
     {
         
     }

@@ -5,35 +5,35 @@
 using System;
 using static System.Console;
 
-class ChecklistGoal : Goal
+public class ChecklistGoal : Goal
 {
     private int _amountCompleted;
     private int _target;
     private int _bonus;
     
     public ChecklistGoal(int target, int bonus, string name, string
-        description, string points) : base(name, description, points)
+        description, string xp) : base(name, description, xp)
     {
         _target = target;
         _bonus = bonus;
     }
     
-    public virtual void RecordEvent()
+    public override void RecordEvent()
     {
         
     }
     
-    public virtual bool IsComplete()
+    public override bool IsComplete()
     {
         
     }
     
-    public virtual string GetDetailsString()
+    public override string GetDetailsString()
     {
         
     }
     
-    public virtual string GetStringRepresentation()
+    public override string GetStringRepresentation()
     {
         
     }
