@@ -8,7 +8,7 @@ using static System.Console;
 public class SimpleGoal : Goal
 {
     private bool _iscomplete;
-
+    
     public SimpleGoal(string name, string description, string xp) :
         base(name, description, xp)
     {
@@ -22,11 +22,11 @@ public class SimpleGoal : Goal
     
     public override bool IsComplete()
     {
-        
+        return _iscomplete;
     }
     
     public override string GetStringRepresentation()
     {
-        
+        return "";
     }
 }

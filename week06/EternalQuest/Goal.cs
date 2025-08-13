@@ -24,7 +24,7 @@ public abstract class  Goal
     
     public virtual string GetDetailsString()
     {
-        
+        return "";
     }
     
     public abstract string GetStringRepresentation();

@@ -20,11 +20,11 @@ public class EternalGoal : Goal
     
     public override bool IsComplete()
     {
-        
+        // I don't actually know if I need this
     }
     
     public override string GetStringRepresentation()
     {
-        
+        return "";
     }
 }

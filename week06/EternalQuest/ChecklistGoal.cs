@@ -22,19 +22,26 @@ public class ChecklistGoal : Goal
     {
         
     }
-    
+
     public override bool IsComplete()
     {
-        
+        if (_amountCompleted == _target)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     public override string GetDetailsString()
     {
-        
+        return "";
     }
     
     public override string GetStringRepresentation()
     {
-        
+        return "";
     }
 }
