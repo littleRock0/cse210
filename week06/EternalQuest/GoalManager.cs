@@ -17,7 +17,14 @@ public class GoalManager
     
     public void Start()
     {
-        
+        Write($"You have {_score} points.\n\n");
+        Write("Please select one of the following:\n");
+        Write("  1. Creat New Goal\n" +
+              "  2. List Goals\n" +
+              "  3. Save Goals\n" +
+              "  4. Load Goals\n" +
+              "  5. Record Event\n" +
+              "  6. Quit\n");
     }
     
     public void DisplayPlayerInfo()
