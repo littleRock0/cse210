@@ -34,4 +34,9 @@ public class EternalGoal : Goal
     {
         return $"{_shortname} ({GetDetailsString()})";
     }
+    
+    public override string GetGoalType()
+    {
+        return "EternalGoal";
+    }
 }

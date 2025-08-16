@@ -61,4 +61,9 @@ public class ChecklistGoal : Goal
     {
         return $"{_shortname} ({GetDetailsString()})";
     }
+    
+    public override string GetGoalType()
+    {
+        return "ChecklistGoal";
+    }
 }

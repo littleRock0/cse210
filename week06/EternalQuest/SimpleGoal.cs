@@ -14,13 +14,13 @@ public class SimpleGoal : Goal
     {
         
     }
-
+    
     public override int RecordEvent()
     {
         if (!IsComplete())
         {
             _iscomplete = true;
-
+            
             return _xp;
         }
         else
@@ -38,5 +38,10 @@ public class SimpleGoal : Goal
     public override string GetStringRepresentation()
     {
         return $"{_shortname} ({GetDetailsString()})";
+    }
+    
+    public override string GetGoalType()
+    {
+        return "SimpleGoal";
     }
 }

@@ -5,7 +5,7 @@
 using System;
 using static System.Console;
 
-public abstract class  Goal
+public abstract class Goal
 {
     protected string _shortname;
     protected string _description;
@@ -28,4 +28,6 @@ public abstract class  Goal
     }
     
     public abstract string GetStringRepresentation();
+    
+    public abstract string GetGoalType();
 }
