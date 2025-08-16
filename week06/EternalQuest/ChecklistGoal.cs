@@ -55,13 +55,13 @@ public class ChecklistGoal : Goal
     public override string GetDetailsString()
     {
         return $"{_name} ({GetDetailsString()}) --- " +
-                $"{_amountCompleted}/{_target}";
+            $"{_amountCompleted}/{_target}";
     }
     
     public override string GetStringRepresentation()
     {
         return $"{GetGoalType}:{_name}<|>{_description}<|>{_xp}<|>" +
-            $"{IsComplete()}";
+            $"{_bonus}<|>{_target}<|>{_amountCompleted}";
     }
     
     public override string GetGoalType()
