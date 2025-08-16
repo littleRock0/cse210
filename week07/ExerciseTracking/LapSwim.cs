@@ -17,7 +17,12 @@ public class LapSwim : Excersize
     
     public override int GetSpeed()
     {
-        throw new NotImplementedException();
+        float distance = GetDistance();
+        int duration = GetDuration();
+        
+        int kmph = (int)(distance / duration);
+        
+        return kmph;
     }
     
     public override float GetDistance()
@@ -25,5 +30,15 @@ public class LapSwim : Excersize
         float distance = _laps * 50;
         
         return distance;
+    }
+
+    public override int GetPace()
+    {
+        float distance = GetDistance();
+        int duration = GetDuration();
+
+        int pace = (int)(duration / distance);
+
+        return pace;
     }
 }
