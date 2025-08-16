@@ -80,11 +80,11 @@ public class ExcersizeManager
     {
         Write("How many laps did you swim? ");
         
-        int laps = int.Parse(ReadLines());
+        int laps = int.Parse(ReadLine());
         
         Write("Number of minutes spent swimming: ");
         
-        int duration = int.Parse(ReadLines());
+        int duration = int.Parse(ReadLine());
         
         string date = GetDate();
         
