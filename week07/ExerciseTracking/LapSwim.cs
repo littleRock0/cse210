@@ -31,14 +31,14 @@ public class LapSwim : Excersize
         
         return distance;
     }
-
+    
     public override int GetPace()
     {
         float distance = GetDistance();
         int duration = GetDuration();
-
+        
         int pace = (int)(duration / distance);
-
+        
         return pace;
     }
 }
