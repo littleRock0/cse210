@@ -7,19 +7,19 @@ using static System.Console;
 
 public class SimpleGoal : Goal
 {
-    private bool _iscomplete;
+    private bool _isComplete;
     
-    public SimpleGoal(string name, string description, int xp) :
-        base(name, description, xp)
+    public SimpleGoal(string name, string description, int xp, bool 
+        isComplete = false) :base(name, description, xp)
     {
-        _iscomplete = false;
+        _isComplete = isComplete;
     }
     
     public override int RecordEvent()
     {
         if (!IsComplete())
         {
-            _iscomplete = true;
+            _isComplete = true;
             
             return _xp;
         }
@@ -31,7 +31,7 @@ public class SimpleGoal : Goal
     
     public override bool IsComplete()
     {
-        return _iscomplete;
+        return _isComplete;
     }
     
     public override string GetStringRepresentation()
