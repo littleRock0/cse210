@@ -12,7 +12,7 @@ public class SimpleGoal : Goal
     public SimpleGoal(string name, string description, int xp) :
         base(name, description, xp)
     {
-        
+        _iscomplete = false;
     }
     
     public override int RecordEvent()
@@ -37,7 +37,8 @@ public class SimpleGoal : Goal
     
     public override string GetStringRepresentation()
     {
-        return $"{_shortname} ({GetDetailsString()})";
+        return $"{GetGoalType}<|>{_name}<|>{_description}<|>{_xp}<|>" +
+            $"{IsComplete()}";
     }
     
     public override string GetGoalType()

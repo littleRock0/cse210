@@ -7,13 +7,13 @@ using static System.Console;
 
 public abstract class Goal
 {
-    protected string _shortname;
+    protected string _name;
     protected string _description;
     protected int _xp;
     
     public Goal(string name, string description, int xp)
     {
-        _shortname = name;
+        _name = name;
         _description = description;
         _xp = xp;
     }
@@ -24,7 +24,7 @@ public abstract class Goal
     
     public virtual string GetDetailsString()
     {
-        return _description;
+        return $"{_name} ({_description})";
     }
     
     public abstract string GetStringRepresentation();
