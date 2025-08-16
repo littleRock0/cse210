@@ -5,7 +5,25 @@
 using System;
 using static System.Console;
 
-public class StationaryBicycles : Excercize
+public class StationaryBicycles : Excersize
 {
+    private int _mph;
     
+    public StationaryBicycles(int mph, string date, int duration) : base
+        (date, duration)
+    {
+        _mph = mph;
+    }
+    
+    public override int GetSpeed()
+    {
+        return _mph;
+    }
+    
+    public override float GetDistance()
+    {
+        float distance = _mph * GetDuration();
+        
+        return distance;
+    }
 }

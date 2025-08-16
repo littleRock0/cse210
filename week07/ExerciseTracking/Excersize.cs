@@ -5,7 +5,23 @@
 using System;
 using static System.Console;
 
-public class Excersize
+public abstract class Excersize
 {
+    private string _date;
+    private int _duration;
     
+    public Excersize(string date, int duration)
+    {
+        _date = date;
+        _duration = duration;
+    }
+    
+    public abstract int GetSpeed();
+    
+    public abstract float GetDistance();
+    
+    public int GetDuration()
+    {
+        return _duration;
+    }
 }
