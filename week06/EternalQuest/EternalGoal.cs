@@ -7,7 +7,7 @@ using static System.Console;
 
 public class EternalGoal : Goal
 {
-    public EternalGoal(string name, string description, string xp) :
+    public EternalGoal(string name, string description, int xp) :
         base(name, description, xp)
     {
         
@@ -26,6 +26,6 @@ public class EternalGoal : Goal
     
     public override string GetStringRepresentation()
     {
-        return "";
+        return $"{_shortname} ({GetDetailsString()})";
     }
 }

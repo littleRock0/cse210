@@ -9,7 +9,7 @@ public class SimpleGoal : Goal
 {
     private bool _iscomplete;
     
-    public SimpleGoal(string name, string description, string xp) :
+    public SimpleGoal(string name, string description, int xp) :
         base(name, description, xp)
     {
         
@@ -27,6 +27,6 @@ public class SimpleGoal : Goal
     
     public override string GetStringRepresentation()
     {
-        return "";
+        return $"{_shortname} ({GetDetailsString()})";
     }
 }

@@ -12,8 +12,9 @@ public class ChecklistGoal : Goal
     private int _bonus;
     
     public ChecklistGoal(int target, int bonus, string name, string
-        description, string xp) : base(name, description, xp)
+        description, int xp) : base(name, description, xp)
     {
+        _amountCompleted = 0;
         _target = target;
         _bonus = bonus;
     }
@@ -37,11 +38,11 @@ public class ChecklistGoal : Goal
     
     public override string GetDetailsString()
     {
-        return "";
+        return $"{_description} --- {_amountCompleted}/{_target}";
     }
     
     public override string GetStringRepresentation()
     {
-        return "";
+        return $"{_shortname} ({GetDetailsString()})";
     }
 }
