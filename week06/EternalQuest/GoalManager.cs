@@ -30,6 +30,7 @@ public class GoalManager
                   "  3. Save Goals\n" +
                   "  4. Load Goals\n" +
                   "  5. Record Event\n" +
+                  "  6. Delete Goal\n" +
                   "  7. Quit\n");
             
             int selection = int.Parse(ReadLine());
@@ -38,7 +39,7 @@ public class GoalManager
             {
                 CreateGoal();
             }
-            if (selection == 2)
+            else if (selection == 2)
             {
                 ListGoals();
             }
@@ -48,11 +49,11 @@ public class GoalManager
             }
             else if (selection == 4)
             {
-                RecordEvent();
+                LoadGoals();
             }
             else if (selection == 5)
             {
-                LoadGoals();
+                RecordEvent();
             }
             else if (selection == 6)
             {
@@ -71,12 +72,12 @@ public class GoalManager
     
     public void DeleteGoal()
     {
-        Write("Which goal would you like to delete: ");
+        Write("\nWhich goal would you like to delete: \n");
         
         foreach (Goal goal in _goals)
         {
             Write($"  {_goals.IndexOf(goal) + 1}. {goal.GetDetailsString().
-                Split(new string[] { " (" }, StringSplitOptions.None)[0]}");
+                Split(new string[] { " (" }, StringSplitOptions.None)[0]}\n");
         }
         
         int selection = int.Parse(ReadLine()) - 1;
@@ -88,7 +89,7 @@ public class GoalManager
     {
         char tick = ' ';
         
-        Write("Your Goals:\n");
+        Write("\nYour Goals:\n");
         
         foreach (Goal goal in _goals)
         {
@@ -99,6 +100,8 @@ public class GoalManager
             
             Write($"  {_goals.IndexOf(goal) + 1}. [{tick}] " +
                 $"{goal.GetDetailsString()}\n");
+
+            tick = ' ';
         }
     }
     
@@ -106,16 +109,16 @@ public class GoalManager
     {
         if (fromFile.Length == 0)
         {
-            Write("Goal type:\n");
+            Write("\nGoal type:\n");
             Write("  1. Simple Goal\n" +
-                "  2. Eternal Goal\n" +
-                "  3. Checklist Goal\n");
+                  "  2. Eternal Goal\n" +
+                  "  3. Checklist Goal\n");
             
             goalType = int.Parse(ReadLine());
             
             if (goalType == 1)
             {
-                Write("Name of your goal: ");
+                Write("\nName of your goal: ");
                 
                 string goalName = ReadLine();
                 
@@ -136,7 +139,7 @@ public class GoalManager
             }
             else if (goalType == 2)
             {
-                Write("Name of your goal: ");
+                Write("\nName of your goal: ");
                 
                 string goalName = ReadLine();
                 
@@ -157,7 +160,7 @@ public class GoalManager
             }
             else if (goalType == 3)
             {
-                Write("Name of your goal: ");
+                Write("\nName of your goal: ");
                 
                 string goalName = ReadLine();
                 
@@ -186,7 +189,7 @@ public class GoalManager
             }
             else
             {
-                WriteLine("Invalid input. Please try again.");
+                WriteLine("Invalid input. Please retry");
             }
         }
         else
@@ -200,6 +203,8 @@ public class GoalManager
                     bool.Parse(elements[3]));
                 
                 _goals.Add(newSimpleGoal);
+                
+                return;
             }
             else if (goalType == 2)
             {
@@ -207,15 +212,19 @@ public class GoalManager
                     elements[1], int.Parse(elements[2]));
                 
                 _goals.Add(newEternalGoal);
+                
+                return;
             }
             else if (goalType == 3)
             {
                 ChecklistGoal newChecklistGoal = new ChecklistGoal(
-                    int.Parse(elements[3]), int.Parse(elements[4]),
+                    int.Parse(elements[4]), int.Parse(elements[3]),
                     elements[0], elements[1], int.Parse(elements[2]),
                     int.Parse(elements[5]));
                     
                 _goals.Add(newChecklistGoal);
+                
+                return;
             }
             else
             {
@@ -226,7 +235,7 @@ public class GoalManager
     
     public void SaveGoals()
     {
-        Write("Name of file to save to: ");
+        Write("\nName of file to save to: ");
         
         string file = ReadLine();
         
@@ -239,26 +248,11 @@ public class GoalManager
         }
     }
     
-    public void RecordEvent()
-    {
-        Write("Which goal did you accomplish: ");
-        
-        foreach (Goal goal in _goals)
-        {
-            Write($"  {_goals.IndexOf(goal) + 1}. {goal.GetDetailsString().
-                Split(new string[] { " (" }, StringSplitOptions.None)[0]}");
-        }
-        
-        int selection = int.Parse(ReadLine()) - 1;
-        
-        _goals[selection].RecordEvent();
-    }
-    
     public void LoadGoals()
     {
         _goals.Clear();
         
-        Write("Name of file to load from: ");
+        Write("\nName of file to load from: ");
         
         string file = ReadLine();
         
@@ -289,5 +283,20 @@ public class GoalManager
             
             CreateGoal(type, body);
         }
+    }
+    
+    public void RecordEvent()
+    {
+        Write("\nWhich goal did you accomplish: \n");
+        
+        foreach (Goal goal in _goals)
+        {
+            Write($"  {_goals.IndexOf(goal) + 1}. {goal.GetDetailsString().
+                Split(new string[] { " (" }, StringSplitOptions.None)[0]}\n");
+        }
+        
+        int selection = int.Parse(ReadLine()) - 1;
+        
+        _score += _goals[selection].RecordEvent();
     }
 }

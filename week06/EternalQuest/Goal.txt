@@ -1,0 +1,4 @@
+8
+EternalGoal:asd<|>asdgfsdfhw<|>3
+ChecklistGoal:sfe<|>asdga ae<|>4<|>53<|>6<|>0
+SimpleGoal:fgh<|>asdfg;lkh d<|>2<|>False
