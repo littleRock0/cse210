@@ -14,9 +14,19 @@ public class SimpleGoal : Goal
     {
         
     }
-    
-    public override void RecordEvent()
+
+    public override int RecordEvent()
     {
+        if (!IsComplete())
+        {
+            _iscomplete = true;
+
+            return _xp;
+        }
+        else
+        {
+            return 0;
+        }
         
     }
     

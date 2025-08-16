@@ -19,9 +19,25 @@ public class ChecklistGoal : Goal
         _bonus = bonus;
     }
     
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        
+        if (!IsComplete())
+        {
+            _amountCompleted++;
+            
+            if (IsComplete())
+            {
+                return _bonus + _xp;
+            }
+            else
+            {
+                return _xp;
+            }
+        }
+        else
+        {
+            return 0;
+        }
     }
     
     public override bool IsComplete()

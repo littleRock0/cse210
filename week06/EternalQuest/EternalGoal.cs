@@ -13,14 +13,20 @@ public class EternalGoal : Goal
         
     }
     
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        
+        if (!IsComplete())
+        {
+            return _xp;
+        }
+        else
+        {
+            return 0;
+        }
     }
     
     public override bool IsComplete()
     {
-        // I don't actually know if I need this
         return false;
     }
     

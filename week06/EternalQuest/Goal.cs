@@ -9,7 +9,7 @@ public abstract class  Goal
 {
     protected string _shortname;
     protected string _description;
-    private int _xp;
+    protected int _xp;
     
     public Goal(string name, string description, int xp)
     {
@@ -18,7 +18,7 @@ public abstract class  Goal
         _xp = xp;
     }
     
-    public abstract void RecordEvent();
+    public abstract int RecordEvent();
     
     public abstract bool IsComplete();
     
