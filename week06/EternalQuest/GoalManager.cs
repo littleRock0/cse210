@@ -100,7 +100,7 @@ public class GoalManager
             
             Write($"  {_goals.IndexOf(goal) + 1}. [{tick}] " +
                 $"{goal.GetDetailsString()}\n");
-
+            
             tick = ' ';
         }
     }
