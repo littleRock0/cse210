@@ -1,1 +1,4 @@
 0
+System.Func`1[System.String]:fgh<|>asdf adfl<|>5<|>False
+EternalGoal:asd<|>asdgfsdfhw<|>3
+System.Func`1[System.String]:sfe<|>asdga ae<|>4<|>53<|>6<|>0

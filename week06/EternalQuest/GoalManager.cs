@@ -88,6 +88,8 @@ public class GoalManager
     {
         char tick = ' ';
         
+        Write("Your Goals:\n");
+        
         foreach (Goal goal in _goals)
         {
             if (goal.IsComplete())
@@ -95,8 +97,8 @@ public class GoalManager
                 tick = 'X';
             }
             
-            Write($"{_goals.IndexOf(goal) + 1}. [{tick}] " +
-                $"{goal.GetDetailsString()}");
+            Write($"  {_goals.IndexOf(goal) + 1}. [{tick}] " +
+                $"{goal.GetDetailsString()}\n");
         }
     }
     
