@@ -32,7 +32,7 @@ public class EternalGoal : Goal
     
     public override string GetStringRepresentation()
     {
-        return $"{GetGoalType()}<|>{_name}<|>{_description}<|>{_xp}<|>";
+        return $"{GetGoalType()}:{_name}<|>{_description}<|>{_xp}<|>";
     }
     
     public override string GetGoalType()

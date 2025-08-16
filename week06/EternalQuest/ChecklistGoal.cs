@@ -60,7 +60,7 @@ public class ChecklistGoal : Goal
     
     public override string GetStringRepresentation()
     {
-        return $"{GetGoalType}<|>{_name}<|>{_description}<|>{_xp}<|>" +
+        return $"{GetGoalType}:{_name}<|>{_description}<|>{_xp}<|>" +
             $"{IsComplete()}";
     }
     
