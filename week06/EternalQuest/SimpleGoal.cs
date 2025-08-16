@@ -27,7 +27,6 @@ public class SimpleGoal : Goal
         {
             return 0;
         }
-        
     }
     
     public override bool IsComplete()
